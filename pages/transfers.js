@@ -1,63 +1,94 @@
-/*this page is just a test list (to complete...) of possible charts.
- - Charts from tokens data are in components/charts/tokens
- - Charts from token data could be in components/charts/token
- - Charts from Owners data could be in components/charts/owners
- - Charts from Owner data could be in components/charts/owner
-*/
-import Head from 'next/head'
-
 import React from 'react';
-import styles from '../styles/Home.module.css'
+import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
-import { getTransfers, getMetadatas } from './api/getData';
-import { ValueOverTime } from '../components/charts/transfers';
-// import getDate from './owners';
-// getstaticpaths first
+import { getTransfers } from './api/getData';
+
+// import dynamicColors from "../utils/dynamiccolors.js";
+// import getDate from '../pages/transfers';
+
 export async function getStaticProps() {
     var data = {};
-    const me = await getMetadatas()
-    // const to = await getTokens()
     const tr = await getTransfers()
-    // data = { props: { metadatas: me, tokens: to, transfers: tr } }
     data = { props: { transfers: tr } }
     console.log(tr)
     return data;
 }
-export function getDate(_timestamp) {
-    let date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(_timestamp * 1000)
-    return date
-}
-// import { TokensBar, TokensDoughnut } from '../components/charts/tokens';
 
-export default function Transfers({ transfers, metadata }) {
-    // { console.log(getDate(tx.timestamp * 1000)) }
-    { console.log(transfers[0])
-        // var date = getDate(transfers[0].timestamp * 1000) 
-        console.log(transfers[0].timestamp)
-        console.log(getDate(transfers[0].timestamp))
+
+const cumulativeSum = arr => {
+    const creds = arr.reduce((acc, val) => {
+        let { sum, res } = acc;
+        sum += val;
+        res.push(sum);
+        return { sum, res };
+    }, {
+        sum: 0,
+        res: []
+    });
+    return creds.res;
+};
+
+
+function timeData(transfers) {
+    var _vt = [];
+    var values = [];
+    var colors = [];
+    var colorsborder = [];
+    console.log(transfers)
+
+    var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
+    var labels = ts;
+    var vs = transfers.map((tx, index) => ({ ts: tx.timestamp, vi: tx.valueExact }))
+    // console.log(ts)
+    // console.log('length', ts.length)
+    for (let i = 0; i < ts.length; i++) {
+        console.log('ts[i]', ts[i])
+        var cumulative = vs.filter(
+            tx => tx.ts === ts[i]
+        ).map(tx => (Number(tx.vi))).reduce((a, b) => { return a + b })
+        console.log('cumulative', cumulative)
+        values.push(cumulative)
     }
-    return (
-        <div className={styles.container}>
-            <Head>
-                <title>The System Transfer Analytics</title>
-                <meta name="This page shows transfers in the System." />
-            </Head>
-            <main className={styles.trasfers}>
-                <h1>Transfers</h1>
-                <ValueOverTime transfers={ transfers } />
-                    {/* // transfers.map((tx, idx) => (
-                        // console.log('logging from console', tx)
-                        // {tx.id}
-                        // <div key={idx}>
-                        //     <p>Id {tx.id}</p>
-                        //     <p>Token {tx.token.id}</p>
-                        //     <p>Timestamp {tx.timestamp}</p>
-                        //     <p>Date {getDate(tx.timestamp)}</p>
-                        //     <p>Value {tx.valueExact}</p>
-                        // </div>
+    // console.log('values', values)
+    // console.log(ts)
+    // console.log('cumsum', cumulativeSum(values))
 
-                    // )) */}
-            </main>
+    const dataset = {
+        label: 'Value over time',
+        data: cumulativeSum(values),
+        // backgroundColor: 'black',
+        borderColor: 'black',
+    };
+    return {
+        props: { labels: labels, datasets: [dataset] }
+    }
+}
+
+export default function Transfers({ transfers }) {
+    return (
+        <main className=" py-20 w-2/3 min-h-screen mx-auto items-center justify-center">
+            <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
+                <ValueOverTime transfers={ transfers } />
+            </div>
+        </main>
+    );
+}
+
+
+function ValueOverTime({ transfers }) {
+    const data = timeData(transfers)
+    console.log(transfers)
+    var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
+    return (
+        <div>
+            {/* {console.log(data.props)} */}
+            <Line
+                // labels={ [1, 2, 3, 4, 5]}
+                // data={ [1, 2, 3, 4, 5] }
+                data={data.props}
+                width={400}
+                height={200}
+            />
         </div>
-);
+    );
 }
