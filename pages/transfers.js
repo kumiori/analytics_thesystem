@@ -2,18 +2,74 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { getTransfers } from './api/getData';
+import { gql } from "@apollo/client";
+import client from "../apollo-client.js";
 
 // import dynamicColors from "../utils/dynamiccolors.js";
-// import getDate from '../pages/transfers';
+function getDate(_timestamp) {
+    let date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit'}).format(_timestamp*1000)
+        // , minute: '2-digit', second: '2-digit' 
+    return date
+}
+
+export async function getExchanged() {
+    const { data } = await client.query({
+        query: gql`
+      query Tokens {
+    transfers(where: { from_not: null, to_not: null }) {
+        valueExact
+        timestamp
+    token {
+            id
+            uri
+        }
+    }
+}
+`,
+    });
+
+    return data.transfers
+}
+
+export async function getSacrificed() {
+    const { data } = await client.query({
+        query: gql`
+      query Tokens {
+  transfers(where: {to: null}) {
+    id
+    timestamp
+    valueExact
+  }
+}
+`,
+    });
+
+    return data.transfers
+}
 
 export async function getStaticProps() {
     var data = {};
     const tr = await getTransfers()
-    data = { props: { transfers: tr } }
-    console.log(tr)
+    const _sacr = await getSacrificed()
+    const _exch = await getExchanged()
+
+    data = { props: { transfers: tr, sacrifices: _sacr, exchanged: _exch } }
+    // console.log(tr)
     return data;
 }
 
+function getTimeseries(transactions, steps = 100) {
+    // get first and last timesteps, return discrete time
+    const _ = require("lodash");            
+
+    console.log('getTs', transactions)
+
+    var _tmax = Math.max(...transactions.map((tx) => (Number(tx.timestamp))))
+    var _tmin = Math.min(...transactions.map((tx) => (Number(tx.timestamp))))
+    // var times = transactions.map((tx) => (Number(tx.timestamp)))
+
+    return _.range(_tmin, _tmax, steps)
+}
 
 const cumulativeSum = arr => {
     const creds = arr.reduce((acc, val) => {
@@ -28,33 +84,55 @@ const cumulativeSum = arr => {
     return creds.res;
 };
 
+// Linear interpolation
+// http://hevi.info/do-it-yourself/interpolating-and-array-to-fit-another-size/
+// changes the size of an given array to given fitCount and protects its fluctuation pattern
+function linearInterpolate(before, after, atPoint) {
+    return before + (after - before) * atPoint;
+};
 
-function timeData(transfers) {
-    var _vt = [];
+function interpolateArray(data, fitCount) {
+    var newData = new Array();
+    var springFactor = new Number((data.length - 1) / (fitCount - 1));
+    newData[0] = data[0]; // for new allocation
+    for (var i = 1; i < fitCount - 1; i++) {
+        var tmp = i * springFactor;
+        var before = new Number(Math.floor(tmp)).toFixed();
+        var after = new Number(Math.ceil(tmp)).toFixed();
+        var atPoint = tmp - before;
+        newData[i] = this.linearInterpolate(data[before], data[after], atPoint);
+    }
+    newData[fitCount - 1] = data[data.length - 1]; // for new allocation
+    return newData;
+};
+function timeData(transactions, label="Value over time", timearray=[]) {
     var values = [];
-    var colors = [];
-    var colorsborder = [];
-    console.log(transfers)
+    
+    if(timearray===[]) {
+        var _times = getTimeseries(transactions)
+    }
+    else {
+        var _times = timearray
+    }
+    var ts = [...new Set(transactions.map((tx, index) => (tx.timestamp)).sort())];
+    
+    var labels = ts.map(ti => { return getDate(ti) });
 
-    var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
-    var labels = ts;
-    var vs = transfers.map((tx, index) => ({ ts: tx.timestamp, vi: tx.valueExact }))
-    // console.log(ts)
-    // console.log('length', ts.length)
+    var vs = transactions.map((tx, index) => ({ ts: tx.timestamp, vi: tx.valueExact }))
+
+    console.log(vs)
+    console.log(_times)
+
+
     for (let i = 0; i < ts.length; i++) {
-        console.log('ts[i]', ts[i])
         var cumulative = vs.filter(
             tx => tx.ts === ts[i]
         ).map(tx => (Number(tx.vi))).reduce((a, b) => { return a + b })
-        console.log('cumulative', cumulative)
         values.push(cumulative)
     }
-    // console.log('values', values)
-    // console.log(ts)
-    // console.log('cumsum', cumulativeSum(values))
 
     const dataset = {
-        label: 'Value over time',
+        label: label,
         data: cumulativeSum(values),
         // backgroundColor: 'black',
         borderColor: 'black',
@@ -64,27 +142,35 @@ function timeData(transfers) {
     }
 }
 
-export default function Transfers({ transfers }) {
+export default function Transfers({ transfers, sacrifices, exchanged }) {
+
+    const _timeseries = getTimeseries(transfers)
+    // console.log('timeseries', _timeseries)
+
     return (
         <main className=" py-20 w-2/3 min-h-screen mx-auto items-center justify-center">
             <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
-                <ValueOverTime transfers={ transfers } />
+                <ValueOverTime transfers={transfers} label={'Transfers'} timeaxis = {_timeseries}/>
+            </div>
+            <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
+                <ValueOverTime transfers={sacrifices} label={'Sacrificed'} timeaxis = {_timeseries}/>
+            </div>
+            <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
+                <ValueOverTime transfers={exchanged} label={'Exchanged'} timeaxis = {_timeseries}/>
             </div>
         </main>
-    );
+);
 }
 
-
-function ValueOverTime({ transfers }) {
-    const data = timeData(transfers)
-    console.log(transfers)
-    var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
+function ValueOverTime({ transfers, label='', timeaxis}) {
+    const data = timeData(transfers, label = label, timeaxis)
+    var _timeseries
+    // console.log(transfers)
+    // var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
     return (
         <div>
             {/* {console.log(data.props)} */}
             <Line
-                // labels={ [1, 2, 3, 4, 5]}
-                // data={ [1, 2, 3, 4, 5] }
                 data={data.props}
                 width={400}
                 height={200}
