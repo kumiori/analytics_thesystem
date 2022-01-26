@@ -1,5 +1,5 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import { Line, Scatter } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { getTransfers } from './api/getData';
 import { gql } from "@apollo/client";
@@ -62,8 +62,6 @@ function getTimeseries(transactions, steps = 100) {
     // get first and last timesteps, return discrete time
     const _ = require("lodash");            
 
-    console.log('getTs', transactions)
-
     var _tmax = Math.max(...transactions.map((tx) => (Number(tx.timestamp))))
     var _tmin = Math.min(...transactions.map((tx) => (Number(tx.timestamp))))
     // var times = transactions.map((tx) => (Number(tx.timestamp)))
@@ -105,6 +103,8 @@ function interpolateArray(data, fitCount) {
     newData[fitCount - 1] = data[data.length - 1]; // for new allocation
     return newData;
 };
+
+
 function timeData(transactions, label="Value over time", timearray=[]) {
     var values = [];
     
@@ -119,10 +119,6 @@ function timeData(transactions, label="Value over time", timearray=[]) {
     var labels = ts.map(ti => { return getDate(ti) });
 
     var vs = transactions.map((tx, index) => ({ ts: tx.timestamp, vi: tx.valueExact }))
-
-    console.log(vs)
-    console.log(_times)
-
 
     for (let i = 0; i < ts.length; i++) {
         var cumulative = vs.filter(
@@ -156,10 +152,80 @@ export default function Transfers({ transfers, sacrifices, exchanged }) {
                 <ValueOverTime transfers={sacrifices} label={'Sacrificed'} timeaxis = {_timeseries}/>
             </div>
             <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
-                <ValueOverTime transfers={exchanged} label={'Exchanged'} timeaxis = {_timeseries}/>
+                <ValueOverTime transfers={exchanged} label={'Exchanged'} timeaxis={_timeseries} />
+            </div>
+            <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
+                <ScatterData transfers={transfers} label={'Scatter'}/>
             </div>
         </main>
 );
+}
+
+const cumulateSum = (sum => value => sum += value)(0);
+
+// export 
+function ScatterData({transfers, label}) {
+    var _dataxy = transfers.map((tx, index) => ({ x: tx.timestamp / 1e9, y: tx.valueExact }))
+    console.log(_dataxy)
+    const time_sorted_data = Object.entries(_dataxy)
+        .sort(([, a], [, b]) => a - b)
+        .reduce((r, [k, v]) => ( { ...r, [k]: v.x }), {});
+
+    const sortable = Object.fromEntries(
+        Object.entries(_dataxy).sort(([, a], [, b]) => a.x - b.x)
+    );
+    console.log('Object.entries(_dataxy)', Object.entries(_dataxy))
+
+
+    
+    // console.log('Object.fromEntries(_dataxy)', Object.fromEntries(_dataxy))
+    var sorted = _dataxy.sort((a, b)=> Number(a.x) - Number(b.x))
+    var _cumulated = sorted.map((tx) => ({ x: tx.x, y: cumulateSum(Number(tx.y)) }))
+    console.log('sorted', sorted)
+    console.log('_cumulated', _cumulated)
+
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+            x: {
+                type: 'linear',
+                position: 'bottom'
+            }
+        },
+        // yAxes: [{
+        //     ticks: {
+        //         min: 0,
+        //         max: 30,
+        //         stepSize: 20
+        //     }
+        // }]
+    };
+
+    const dataset = {
+        label: label,
+        data: _cumulated,
+        borderColor: 'black',
+    };
+
+    const data = {
+        datasets: [
+            dataset
+        ],
+    };
+    console.log('data', data)
+
+    return (
+        <div>
+            <Scatter
+                data={data}
+                options={options}
+                width={400}
+                height={200}
+            />
+        </div>
+    )
 }
 
 function ValueOverTime({ transfers, label='', timeaxis}) {
