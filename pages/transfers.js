@@ -31,6 +31,20 @@ export async function getExchanged() {
     return data.transfers
 }
 
+export async function getAccounts() {
+    const { data } = await client.query({
+        query: gql`
+      query Tokens {
+            accounts {
+                id
+            }
+        }
+`,
+    });
+
+    return data.accounts
+}
+
 export async function getSacrificed() {
     const { data } = await client.query({
         query: gql`
@@ -52,8 +66,16 @@ export async function getStaticProps() {
     const tr = await getTransfers()
     const _sacr = await getSacrificed()
     const _exch = await getExchanged()
+    const _acct = await getAccounts()
 
-    data = { props: { transfers: tr, sacrifices: _sacr, exchanged: _exch } }
+    data = {
+        props: {
+            transfers: tr,
+            sacrifices: _sacr,
+            exchanged: _exch,
+            accounts: _acct
+        }
+    }
     // console.log(tr)
     return data;
 }
@@ -138,7 +160,7 @@ function timeData(transactions, label="Value over time", timearray=[]) {
     }
 }
 
-export default function Transfers({ transfers, sacrifices, exchanged }) {
+export default function Transfers({ transfers, sacrifices, exchanged, accounts }) {
 
     const _timeseries = getTimeseries(transfers)
     // console.log('timeseries', _timeseries)
@@ -155,7 +177,10 @@ export default function Transfers({ transfers, sacrifices, exchanged }) {
                 <ValueOverTime transfers={exchanged} label={'Exchanged'} timeaxis={_timeseries} />
             </div>
             <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
-                <ScatterData transfers={transfers} label={'Scatter'}/>
+                <ScatterData transfers={transfers} label={'Scatter'} />
+            </div>
+            <div className="mt-10 shadow-lg border rounded-xl p-4 bg-white dark:bg-gray-800 relative overflow-hiddenr">
+                <ScatterAccounts accounts={accounts} label={'Scattered accounts'} />
             </div>
         </main>
 );
@@ -166,22 +191,9 @@ const cumulateSum = (sum => value => sum += value)(0);
 // export 
 function ScatterData({transfers, label}) {
     var _dataxy = transfers.map((tx, index) => ({ x: tx.timestamp / 1e9, y: tx.valueExact }))
-    console.log(_dataxy)
-    const time_sorted_data = Object.entries(_dataxy)
-        .sort(([, a], [, b]) => a - b)
-        .reduce((r, [k, v]) => ( { ...r, [k]: v.x }), {});
-
-    const sortable = Object.fromEntries(
-        Object.entries(_dataxy).sort(([, a], [, b]) => a.x - b.x)
-    );
-    console.log('Object.entries(_dataxy)', Object.entries(_dataxy))
-
-
-    
-    // console.log('Object.fromEntries(_dataxy)', Object.fromEntries(_dataxy))
-    var sorted = _dataxy.sort((a, b)=> Number(a.x) - Number(b.x))
-    var _cumulated = sorted.map((tx) => ({ x: tx.x, y: cumulateSum(Number(tx.y)) }))
-    console.log('sorted', sorted)
+    var _sorted = _dataxy.sort((a, b)=> Number(a.x) - Number(b.x))
+    var _cumulated = _sorted.map((tx) => ({ x: tx.x, y: cumulateSum(Number(tx.y)) }))
+    console.log('_sorted', _sorted)
     console.log('_cumulated', _cumulated)
 
     const options = {
@@ -194,13 +206,6 @@ function ScatterData({transfers, label}) {
                 position: 'bottom'
             }
         },
-        // yAxes: [{
-        //     ticks: {
-        //         min: 0,
-        //         max: 30,
-        //         stepSize: 20
-        //     }
-        // }]
     };
 
     const dataset = {
@@ -223,6 +228,90 @@ function ScatterData({transfers, label}) {
                 options={options}
                 width={400}
                 height={200}
+            />
+        </div>
+    )
+}
+
+
+// export 
+function ScatterAccounts({ accounts, label }) {
+    var _addresses = accounts.map((tx, index) => tx.id )
+    
+    // console.log(_addresses.splice(0, 1))
+    console.log(_addresses)
+
+    const coords = _addresses.map((addr, idx) => {
+        if (idx === 0) {
+            return ({x: 0, y: 0})
+        }
+        else
+            return ({ x: Math.random() - .5, y: Math.random() - .5 })
+    })
+
+    console.log(coords)
+    // var _sorted = _dataxy.sort((a, b) => Number(a.x) - Number(b.x))
+    // var _cumulated = _sorted.map((tx) => ({ x: tx.x, y: cumulateSum(Number(tx.y)) }))
+    // console.log('_sorted', _sorted)
+    // console.log('_cumulated', _cumulated)
+
+
+
+    const options = {
+        scales: {
+            y: {
+                beginAtZero: true,
+            },
+            x: {
+                type: 'linear',
+                position: 'bottom'
+            }
+        },
+        plugins: {
+            autocolors: false,
+            annotation: {
+                annotations: {
+                    line1: {
+                        type: 'line',
+                        yMin: 0.,
+                        yMax: 0.,
+                        borderColor: 'red',
+                        borderWidth: 2,
+                    }
+                }
+            }
+        }
+    };
+    console.log(_addresses)
+
+    const dataset = {
+        label: label,
+        data: coords,
+        borderColor: 'black',
+        backgroundColor: 'rgb(255, 99, 132)'
+    };
+
+    const data = {
+        datasets: [
+            dataset,
+            {
+                label: '0x0',
+                data: [{ x: 0., y: 0. }],
+                borderColor: 'black',
+                borderWidth: 10,
+                backgroundColor: 'black'
+            }
+        ],
+    };
+    // console.log('data', data)
+
+    return (
+        <div>
+            <Scatter
+                data={data}
+                options={options}
+                width={400}
+                height={400}
             />
         </div>
     )
