@@ -14,9 +14,9 @@ const Header = () => (
                     Cards
                 </a>
             </Link>
-            <Link href="/owners">
+            <Link href="/players">
                 <a>
-                    Owners
+                    Players
                 </a>
             </Link>
             <Link href="/charts">

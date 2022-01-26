@@ -35,7 +35,9 @@ export function TokensDoughnut({ tokens }) {
     return (
         <div >
             Total Supply
-            <Doughnut data={data.props} />
+            <Doughnut 
+                data={data.props}
+             />
         </div>
     );
 }

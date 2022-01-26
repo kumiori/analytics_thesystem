@@ -1,5 +1,5 @@
 import React from "react";
-import { getDate } from "../pages/owners"
+import { getDate } from "../pages/players"
 
 export default function Modal({ balance }) {
     const [showModal, setShowModal] = React.useState(false);
