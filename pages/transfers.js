@@ -1,10 +1,11 @@
+import Head from 'next/head'
 import React from 'react';
 import { Line, Scatter } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
-import { getTransfers } from './api/getData';
+import { getTransfers, getMetadatas } from './api/getData';
 import { gql } from "@apollo/client";
 import client from "../apollo-client.js";
-// import { ValueOverTime } from '../components/charts/transfers';
+import { ValueOverTime } from '../components/charts/transfers';
 
 // import dynamicColors from "../utils/dynamiccolors.js";
 function getDate(_timestamp) {
@@ -318,19 +319,19 @@ function ScatterAccounts({ accounts, label }) {
     )
 }
 
-function ValueOverTime({ transfers, label='', timeaxis}) {
-    const data = timeData(transfers, label = label, timeaxis)
-    var _timeseries
-    // console.log(transfers)
-    // var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
-    return (
-        <div>
-            {/* {console.log(data.props)} */}
-            <Line
-                data={data.props}
-                width={400}
-                height={200}
-            />
-        </div>
-    );
-}
+// function ValueOverTime({ transfers, label='', timeaxis}) {
+//     const data = timeData(transfers, label = label, timeaxis)
+//     var _timeseries
+//     // console.log(transfers)
+//     // var ts = [...new Set(transfers.map((tx, index) => (tx.timestamp)).sort())];
+//     return (
+//         <div>
+//             {/* {console.log(data.props)} */}
+//             <Line
+//                 data={data.props}
+//                 width={400}
+//                 height={200}
+//             />
+//         </div>
+//     );
+// }
