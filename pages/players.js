@@ -5,6 +5,7 @@ import getMintsBurnsTransfers from "../utils/getMintsBurnsTransfers"
 import Modal from '../components/modal';
 import SearchBar from '../components/search';
 import React, { useState } from 'react';
+import getDate from '../utils/getdate';
 
 
 export async function getStaticProps() {
@@ -16,10 +17,6 @@ export async function getStaticProps() {
     return data;
 }
 
-export function getDate(_timestamp) {
-    let date = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(_timestamp)
-    return date
-}
 
 export default function Owners({ owners, metadata }) {
     const [searchQuery, setSearchQuery] = useState('');
@@ -42,7 +39,7 @@ export default function Owners({ owners, metadata }) {
                 />
             </div>
             <div className="mx-auto flex-col">
-                {owners.map((owner, index) => (
+                {filteredOwners.map((owner, index) => (
                     <div key={index} id={index} className="py-6 mb-4 border rounded-xl mx-auto justify-center  w-11/12">
                         <p className="mx-auto flex justify-center text-2xl font-bold mb-4"> {owner.id}</p>
                         <div className=" w-full mx-auto grid grid-flex gap-y-4 gap-x-2 row-span-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
@@ -55,7 +52,7 @@ export default function Owners({ owners, metadata }) {
                                             <Modal balance={balance} />
                                         </div>
                                     </div>
-                                    
+
                                     {/*<p className="flex py-1 bg-gray-100 items-center justify-center">
                                         <Image src={metadata[(balance.id.split("/")[0].split("x")[1] - 1)].image.toString()} width={80} height={80} />
                                     </p>*/}
@@ -72,10 +69,10 @@ export default function Owners({ owners, metadata }) {
                                         </p>
                                         <p>
                                             {"Transfers OUT: " + getMintsBurnsTransfers(balance.transferFromEvent).transfers}
-                                        </p> 
-                                    </div> 
+                                        </p>
+                                    </div>
                                 </div>
-                            ))} 
+                            ))}
                         </div>
 
                     </div>

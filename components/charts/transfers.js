@@ -2,7 +2,7 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import dynamicColors from "../../utils/dynamiccolors.js";
-import getDate from '../../pages/transfers';
+import getDate from "../../utils/getdate";
 
 const cumulativeSum = arr => {
     const creds = arr.reduce((acc, val) => {
@@ -69,11 +69,10 @@ export function ValueOverTime({ transfers }) {
     console.log(data.props.labels)
     return (
         <div>
-            {console.log(data.props)}
-           <Line
+            <Line
                 // labels={ [1, 2, 3, 4, 5]}
                 // data={ [1, 2, 3, 4, 5] }
-                data={ data.props }
+                data={data.props}
                 width={400}
                 height={200}
             />
