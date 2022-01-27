@@ -4,7 +4,7 @@ import Chart from 'chart.js/auto';
 import { getTransfers } from './api/getData';
 import { gql } from "@apollo/client";
 import client from "../apollo-client.js";
-import { ValueOverTime } from '../components/charts/transfers';
+// import { ValueOverTime } from '../components/charts/transfers';
 
 // import dynamicColors from "../utils/dynamiccolors.js";
 function getDate(_timestamp) {
