@@ -1,4 +1,6 @@
 import '../styles/globals.css'
+import '../styles/appearence.css'
+import '../styles/additional.css'
 import Head from 'next/head'
 import Header from "../components/header.js"
 import Footer from "../components/footer.js"
@@ -32,12 +34,13 @@ function MyApp({ Component, pageProps }) {
   } else return (
     <><div>
       <Head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <title>The System Analytics</title>
         <meta name="This website shows TheSystem smart contract data." />
       </Head>
-      <Header />
+      {/* <Header /> */}
       <Component {...pageProps} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
     </>
   );
