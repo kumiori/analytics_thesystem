@@ -3,9 +3,11 @@ import FullHeader from '../components/fullHeader';
 import ImageIntro from '../components/header10';
 import Content1 from '../components/content1';
 import ImageWithDescription from '../components/image2';
+import RndImageWithDescription from '../components/image10';
 import Timeline from '../components/timeline';
 import Header1 from '../components/header1';
 import cardImages from '../utils/cardsImages';
+import {Helmet} from "react-helmet";
 
 const MathJax = require('react-mathjax')
 const tex = `f(x) \\forall = \\int_{-\\infty}^\\infty
@@ -14,31 +16,28 @@ const tex = `f(x) \\forall = \\int_{-\\infty}^\\infty
 
 
 export default function Info() {
-    const randomImage = cardImages[Math.floor(Math.random() * cardImages.length)];
-    console.log(randomImage);
-
+    function componentDidMount() {
+        document.body.style.backgroundColor = "red"
+    }
     return (
+        
         <>
-            <FullHeader />
-            {/* <MathJax.Provider> */}
-                {/* <div> */}
-                    {/* This is an inline math formula:  */}
-                    {/* <MathJax.Node inline formula={'a = b'} /> */}
-                    {/* And a block one: */}
-                {/* <MathJax.Node formula={tex} /> */}
-                {/* </div> */}
-            {/* </MathJax.Provider> */}
-            <div>
-                <p>Food</p>
-                <CardGenerator randomImage={randomImage} />
-            </div>
+            <Helmet>
+                <link rel="stylesheet" href="../styles/darkmode.css" />
+            </Helmet>
+            {/* <FullHeader /> */}
             <Header1 />
-            <ImageIntro />
+            <RndImageWithDescription />
+            {/* <ImageWithDescription /> */}
+            {/* <ImageIntro /> */}
             <Content1 />
-            <ImageWithDescription  source={randomImage} />
             <Timeline />
         </>
     );
 }
 
-const CardGenerator = props => <h1>{props.randomImage}</h1>;
+function CardGenerator(props) {
+    return <h1>{props.randomImage}</h1>;
+}
+
+
