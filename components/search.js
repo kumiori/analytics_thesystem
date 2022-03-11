@@ -25,7 +25,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
                 placeholder="Owners filter"
                 value={searchQuery}
                 onInput={e => setSearchQuery(e.target.value)}
-                type="text"
+                // type="text"
             />
         </div>
     </div>

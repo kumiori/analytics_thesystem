@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 class Header1 extends React.Component {
   render() {
@@ -18,7 +19,7 @@ class Header1 extends React.Component {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
               <h1 className="sys-section-title sys-fonts-style mb-3 display-1">
-                <strong>"Power Relations  <br/> Must Be  <br/> Reversed."* </strong>
+                <strong>&quot;Power Relations  <br/> Must Be  <br/> Reversed.&quot;* </strong>
               </h1>
               <h2 className="sys-section-title sys-fonts-style mb-3">
                 <strong>Hence, We reverse power relations. </strong>
@@ -34,18 +35,22 @@ class Header1 extends React.Component {
               </p>
 
               <div className="sys-section-btn mt-3">
+              <Link href="/about">
                 <a
                   className="btn btn-success display-4"
-                  href="/info"
                 >
                   Watch
-                </a>{" "}
+                </a>
+                </Link>
+                {" "}
+                <Link href="/about">
                 <a
                   className="btn btn-success-outline display-4"
-                  href="/"
                 >
                   Play
                 </a>
+                </Link>
+
               </div>
             </div>
           </div>

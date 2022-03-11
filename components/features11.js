@@ -13,8 +13,7 @@ class features11 extends React.Component {
                     <strong>Automagically mobile</strong>
                   </h4>
                   <p className="mbr-text mbr-fonts-style mb-4 display-7">
-                    You don't have to code to create your own site. Select one
-                    of available themes in the Mobirise sitebuilder.
+                    La chiave del problema l&apos;abbiamo già girata
                   </p>
                   <div className="mbr-text mbr-fonts-style counter-container display-7">
                     <ul>

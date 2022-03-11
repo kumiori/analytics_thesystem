@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 class ImageIntro extends React.Component {
   render() {
@@ -14,12 +15,13 @@ class ImageIntro extends React.Component {
                 Intro.
               </p>
               <div className="mbr-section-btn mt-3">
-                <a
-                  className="btn btn-secondary display-4"
-                  href="/"
-                >
-                  A singular perturbation
-                </a>
+                <Link href="/">
+                  <a
+                    className="btn btn-secondary display-4"
+                  >
+                    A singular perturbation
+                  </a>
+                </Link>
               </div>
               <div className="image-wrap mt-4">
                 <img

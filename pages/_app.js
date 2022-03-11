@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
   } else return (
     <><div>
       <Head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&amp;display=swap" as="style" onload="this.onLoad=null;this.rel='stylesheet'" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&amp;display=swap" as="style" onLoad="this.onLoad=null;this.rel='stylesheet'" />
         <title>The System Analytics</title>
         <meta name="This website exposes the system." />
       </Head>

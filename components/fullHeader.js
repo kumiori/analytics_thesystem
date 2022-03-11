@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 class FullHeader extends React.Component {
   render() {
@@ -8,23 +9,26 @@ class FullHeader extends React.Component {
           <div className="container">
             <div className="navbar-brand">
               <span className="navbar-logo">
-                <a href="/">
-                  <img
-                    src="/images/logo.png"
-                    alt=""
-                    style={{
-                      height: "3.8rem"
-                    }}
-                  />
-                </a>
+                <Link href="/">
+                  <a>
+                    <img
+                      src="/images/logo.png"
+                      alt=""
+                      style={{
+                        height: "3.8rem"
+                      }}
+                    />
+                  </a>
+                </Link>
               </span>
               <span className="navbar-caption-wrap">
-                <a
-                  className="navbar-caption text-black display-7"
-                  href="/"
-                >
-                  The System
-                </a>
+                <Link href="/">
+                  <a
+                    className="navbar-caption text-black display-7"
+                  >
+                    The System
+                  </a>
+                </Link>
               </span>
             </div>
             <button
@@ -54,20 +58,22 @@ class FullHeader extends React.Component {
                 data-app-modern-menu="true"
               >
                 <li className="nav-item">
-                  <a
-                    className="nav-link link text-black display-4"
-                    href="/"
-                  >
-                    Menu Item 1
-                  </a>
+                  <Link href="/">
+                    <a
+                      className="nav-link link text-black display-4"
+                    >
+                      Menu Item 1
+                    </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a
-                    className="nav-link link text-black display-4"
-                    href="/"
-                  >
-                    Menu Item 2
-                  </a>
+                  <Link href="/">
+                    <a
+                      className="nav-link link text-black display-4"
+                    >
+                      Menu Item 2
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>

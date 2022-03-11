@@ -21,8 +21,7 @@ class countdown2 extends React.Component {
                 <strong>Coming Soon</strong>
               </h3>
               <h4 className="mbr-section-subtitle mb-5 align-center mbr-fonts-style display-7">
-                Use this block as a countdown for your project if it's not ready
-                yet. Set the date in Block Parameters.
+                Filler meat
               </h4>
               <div className="countdown-cont align-center mb-5">
                 <div

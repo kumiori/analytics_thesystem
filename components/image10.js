@@ -51,11 +51,11 @@ function RndImageWithDescription(props) {
                     <div className="col-12 col-lg">
                         <div className="text-wrapper">
                             <h3 className="sys-section-title sys-fonts-style mb-3 display-5">
-                                <strong>Cards, that's it.</strong>
+                                <strong>Cards, that&apos;s it.</strong>
                             </h3>
                             <p className="sys-text sys-fonts-style display-7">
                                 Yet, in the flow, they show <em>structure</em>. 
-                                The system is a fun game, it's an exchange game.
+                                The system is a fun game, it&apos;s an exchange game.
                                 Wanna play? You pay.
                             </p>
                         </div>

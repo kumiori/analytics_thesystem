@@ -9,21 +9,21 @@ class footer3 extends React.Component {
             <div className="row row-links">
               <ul className="foot-menu">
                 <li className="foot-menu-item mbr-fonts-style display-7">
-                  <a href="https://mobirise.com/help/" className="text-success">
+                  <a href="/help" className="text-success">
                     Help Center
                   </a>
                 </li>
                 <li className="foot-menu-item mbr-fonts-style display-7">
                   <a
-                    href="http://forums.mobirise.com/"
+                    href="http://forums.com/"
                     className="text-success"
                   >
-                    Mobirise Forums
+                   Forums
                   </a>
                 </li>
                 <li className="foot-menu-item mbr-fonts-style display-7">
-                  <a href="https://mobirise.com/" className="text-success">
-                    Mobirise.com
+                  <a href="" className="text-success">
+                  .com
                   </a>
                 </li>
               </ul>
@@ -31,25 +31,25 @@ class footer3 extends React.Component {
             <div className="row social-row">
               <div className="social-list align-right pb-2">
                 <div className="soc-item">
-                  <a href="https://twitter.com/mobirise" target="_blank">
+                  <a href="https://twitter.com" target="_blank" rel="noreferrer">
                     <span className="socicon-twitter socicon mbr-iconfont mbr-iconfont-social" />
                   </a>
                 </div>
                 <div className="soc-item">
                   <a
-                    href="https://www.facebook.com/pages/Mobirise/1616226671953247"
-                    target="_blank"
+                    href="https://www.facebook.com/pages/1616226671953247"
+                   target="_blank" rel="noreferrer"
                   >
                     <span className="socicon-facebook socicon mbr-iconfont mbr-iconfont-social" />
                   </a>
                 </div>
                 <div className="soc-item">
-                  <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                  <a href="https://www.youtube.com/c" target="_blank" rel="noreferrer">
                     <span className="socicon-youtube socicon mbr-iconfont mbr-iconfont-social" />
                   </a>
                 </div>
                 <div className="soc-item">
-                  <a href="https://instagram.com/mobirise" target="_blank">
+                  <a href="https://instagram.com" target="_blank" rel="noreferrer">
                     <span className="mbr-iconfont mbr-iconfont-social socicon-instagram socicon" />
                   </a>
                 </div>
@@ -57,7 +57,7 @@ class footer3 extends React.Component {
             </div>
             <div className="row row-copirayt">
               <p className="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                © Copyright 2020 Mobirise. All Rights Reserved.
+                © Copyright 2020. All Rights Reserved.
               </p>
             </div>
           </div>
