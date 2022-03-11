@@ -9,7 +9,6 @@ class ImageWithDescription extends React.Component {
             <div className="col-12 col-lg-6">
               <div className="image-wrapper">
                 <img src="/images/5.jpg" alt="Mobirise Website Builder" />
-                <img src="{{ collect(File::glob('/images/*.{jpg,png,gif}', GLOB_BRACE))->random() }}" />
                 <p className="sys-description sys-fonts-style mt-2 align-center display-4">
                   Image Description
                 </p>

@@ -14,6 +14,11 @@ const Header = () => (
                     Cards
                 </a>
             </Link>
+            <Link href="/info">
+                <a>
+                    Info
+                </a>
+            </Link>
             <Link href="/players">
                 <a>
                     Players

@@ -11,7 +11,8 @@ class Content1 extends React.Component {
                 <strong>Chaining blocks</strong>
               </h3>
               <h4 className="sys-section-subtitle align-center sys-fonts-style mb-4 display-7">
-                Without and with <em>emph </em>at the bottom.
+                Without and with <em>emph </em>at the bottom:
+                approximating sharp transitions with smooth flows.
               </h4>
             </div>
           </div>

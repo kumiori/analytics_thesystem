@@ -8,7 +8,7 @@ class ImageIntro extends React.Component {
           <div className="row justify-content-center">
             <div className="col-md-12 col-lg-9">
               <h1 className="mbr-section-title mbr-fonts-style mb-3 display-1">
-                <strong>EXIT (the matrix)</strong>
+                <strong>(*)</strong>
               </h1>
               <p className="mbr-text mbr-fonts-style display-7">
                 Intro.
@@ -18,12 +18,12 @@ class ImageIntro extends React.Component {
                   className="btn btn-secondary display-4"
                   href="/"
                 >
-                  Singular perturbation
+                  A singular perturbation
                 </a>
               </div>
               <div className="image-wrap mt-4">
                 <img
-                  src="/images/separation.png"
+                  src="/images/separation_flip.jpg"
                   alt=""
                   title
                 />
