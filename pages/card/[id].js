@@ -7,7 +7,7 @@ import TransferList from "../../components/transferList"
 export async function getStaticPaths() {
   const tokens = await getTokensIds();
   const paths = tokens.map(token => ({
-    params: { id: token.id }
+    params: { id: token.identifier }
   }));
   return {
     paths,

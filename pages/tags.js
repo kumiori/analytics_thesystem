@@ -1,10 +1,9 @@
-import Overview from '../components/overview'
-// import CardTags from '../components/card'
+import React from 'react';
+import styles from '../styles/Home.module.css'
 import { getTokens, getMetadatas, getTransfers } from './api/getData';
-import getMintsBurnsTransfers from "../utils/getMintsBurnsTransfers";
+import { TokensBar, TokensBarMix, TokensDoughnut } from '../components/charts/tokens';
 import Link from "next/link";
-import Card from '../components/card'
-import DataFetch from '../components/datafetch'
+import Overview from '../components/overview';
 
 export async function getStaticProps() {
     var data = {};
@@ -15,25 +14,27 @@ export async function getStaticProps() {
     return data;
 }
 
-
-export default function Tags({ token, metadata }) {
-    const data = getMintsBurnsTransfers(token.transfers)
-    console.log(token.id)
-    console.log(token)
-    console.log(data)
-    console.log(token.identifier)
+export default function Tags({ tokens, metadata }) {
+    console.log("token", tokens)
+    // const data = getMintsBurnsTransfers(token.transfers)
+    // console.log(token.id)
+    // console.log(data)
+    // console.log("tags t id", token.identifier)
     return (
-        <Link href="/card/[token.identifier]" as={`/card/${token.identifier}`}>
-            <div key={token.id} className="shadow-lg w-60 border max-w-sm mx-auto rounded-xl  p-2 bg-white  relative overflow-hidden">
-                <p className="text-2xl text-black font-bold mb-1" >
-                    Card {token.identifier}
-                </p>
-                <div className="mt-4" >
-                    <p>
-                        json: {token.uri}
-                    </p>
-                </div>
-            </div>
+        // <Link href="/card/[token.identifier]" as={`/card/${token.identifier}`}>
+        //     <div key={token.id} className="shadow-lg w-60 border max-w-sm mx-auto rounded-xl  p-2 bg-white  relative overflow-hidden">
+        //         <p className="text-2xl text-black font-bold mb-1" >
+        //             Card {token.identifier}
+        //         </p>
+        //         <div className="mt-4" >
+        //             <p>
+        //                 json: {token.uri}
+        //             </p>
+        //         </div>
+        //     </div>
+        // </Link>
+        <Link href="/">
+            <a>Tags</a>
         </Link>
     )
 }
