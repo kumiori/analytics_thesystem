@@ -55,7 +55,7 @@ function RndImageWithFixedDescription(props) {
                                 An exchange game, give or take: is that all it is?
                             </p>
                             <p className="sys-text sys-fonts-style display-7">
-                                Rules are never clear, <br /> laws don't necessarily intersect.
+                                Rules are never clear, <br /> laws don&apos;t necessarily intersect.
                             </p>
                             <p className="sys-text sys-fonts-style display-7">
                                 We dissect and serve bullets sharper than silver.
