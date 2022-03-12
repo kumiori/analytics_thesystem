@@ -26,28 +26,31 @@ class Header1 extends React.Component {
               </h2>
               <p className="sys-text sys-fonts-style display-7">
                 This is a non-standard project. We attack a system and do it frontally.
+                We know how to gracefully crash.
               </p>
               <p className="sys-text sys-fonts-style display-7">
                 What remains that blossoms within the ashes?
               </p>
               <p className="sys-text sys-fonts-style display-7">
                 Unity, We claim.
+                <br />
+                For all.
               </p>
 
               <div className="sys-section-btn mt-3">
-              <Link href="/about">
+              <Link href="/">
                 <a
                   className="btn btn-success display-4"
                 >
-                  Watch
+                  Watch the surface
                 </a>
                 </Link>
                 {" "}
-                <Link href="/about">
+                <Link href="#image2-s">
                 <a
                   className="btn btn-success-outline display-4"
                 >
-                  Play
+                  Play?
                 </a>
                 </Link>
 
