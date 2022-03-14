@@ -30,13 +30,24 @@ class Timeline extends React.Component {
               <div className="col-12 col-md-6">
                 <div className="timeline-text-wrapper">
                   <h4 className="sys-timeline-title sys-fonts-style mb-0 display-5">
-                    <strong>Principles</strong>
+                    <strong>Civilisation</strong>
                   </h4>
                   <p className="sys-text sys-fonts-style mt-3 mb-0 display-7">
-                    3 principles.
+                    Sapiens Sapiens 
+                  {/* /3 principles. */}
                   </p>
                 </div>
               </div>
+              <div className="col-12 col-md-6">
+                <div className="timeline-text-wrapper">
+                  <h4 className="sys-timeline-title sys-fonts-style mb-0 display-5">
+                    <strong>Split</strong>
+                  </h4>
+                  <p className="sys-text sys-fonts-style mt-3 mb-0 display-7">
+                    Bubbles
+                  </p>
+                </div>
+            </div>
             </div>
             <div className="row timeline-element first-separline mb-5">
               <div className="timeline-date col-12">

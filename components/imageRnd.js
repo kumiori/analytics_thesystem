@@ -78,6 +78,9 @@ function RndImageWithFixedDescription(props) {
                                 {/* 0#####----------------> */}
                                 </button>
                             </div>
+                            <p className="sys-text sys-fonts-style display-7">
+                                We play <em>the system</em>.
+                            </p>
                         </div>
                     </div>
                 </div>
