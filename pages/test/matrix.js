@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import matrixGame from '../../test/matrixComponent';
 
 function MatrixGame(props) {
     var computeMatrix = function (rows = 3, cols = 4) {
