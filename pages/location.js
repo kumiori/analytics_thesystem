@@ -1,13 +1,10 @@
 // import './App.css';
 import {useState,useEffect} from 'react'
 import axios from 'axios'
-import ReactGA from 'react-ga4';
-ReactGA.initialize('G-MTGGPQLE4C', { debug: true });
-ReactGA.send({ hitType: "pageview", page: "/location" });
 
 // Look ma', no client js
 // no permission needed.
-function App() {
+function Location() {
   //creating IP state
   const [ip, setIP] = useState('');
   const [loc, setLoc] = useState('');
@@ -34,12 +31,10 @@ function App() {
 
   return (
     <div>
-      <h2>Welcome, from</h2>
-      {/* <h4>{ip}</h4> */}
-      <h4>{data.city}, {data.country}</h4>
+      <h2>Welcome to {data.city}, {data.country}</h2>
       <h4>Longitude: {data.longitude}, Latitude: {data.latitude}</h4>
     </div>
   );
 }
 
-export default App;
+export default Location;
