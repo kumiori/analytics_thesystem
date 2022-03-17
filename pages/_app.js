@@ -9,6 +9,9 @@ import '../styles/additional.css'
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import ReactGA from 'react-ga4';
+ReactGA.initialize('G-MTGGPQLE4C', { debug: true });
+ReactGA.send({ hitType: "pageview", page: "/" });
 
 
 function MyApp({ Component, pageProps }) {
