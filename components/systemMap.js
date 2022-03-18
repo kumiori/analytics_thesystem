@@ -164,7 +164,7 @@ class Map extends Component {
   }
   render() {
     return (
-    <div class={{backgroundColor:'black'}} id={"#" + this.props.id}></div>
+    <div style={{backgroundColor:'black'}} id={"#" + this.props.id}></div>
     );
   }
 }

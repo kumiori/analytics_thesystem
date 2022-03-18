@@ -32,7 +32,7 @@ class SeedsList extends Component {
             Currently seeding</p>
         <p> {Object.values(this.state.dataset).map(
             (city, idx) => {
-            return <span>{city}{idx != this.state.dataset.length-1 ? ',' : '..:' } </span>;
+            return <span key={city}>{city}{idx != this.state.dataset.length-1 ? ',' : '..:' } </span>;
         })}
         </p></>
     );
