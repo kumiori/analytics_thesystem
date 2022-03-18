@@ -3,7 +3,8 @@ import FullHeader from '../components/fullHeader';
 import ImageIntro from '../components/header10';
 import Content1 from '../components/content1';
 import ImageWithDescription from '../components/image2';
-import RndImageWithDescription from '../components/image10';
+import RndImageWithFixedDescription from '../components/imageRnd';
+import Map from '../components/video2';
 import Timeline from '../components/timeline';
 import Header1 from '../components/header1';
 import Features from '../components/features11';
@@ -23,17 +24,13 @@ export default function Info() {
     return (
         
         <>
-            <Helmet>
+            {/* <Helmet>
                 <link rel="stylesheet" href="../styles/darkmode.css" />
-            </Helmet>
+            </Helmet> */}
             {/* <FullHeader /> */}
             <Header1 />
-            <RndImageWithDescription />
-            {/* <ImageWithDescription /> */}
-            {/* <ImageIntro /> */}
-            <Content1 />
-            <Timeline />
-            <Features />
+            <Map />
+            {/* <RndImageWithFixedDescription /> */}
         </>
     );
 }
