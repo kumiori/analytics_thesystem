@@ -29,8 +29,8 @@ export default function Info() {
             </Helmet> */}
             {/* <FullHeader /> */}
             <Header1 />
+            <RndImageWithFixedDescription />
             <Map />
-            {/* <RndImageWithFixedDescription /> */}
         </>
     );
 }
