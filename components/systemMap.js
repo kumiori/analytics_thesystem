@@ -15,12 +15,6 @@ class Map extends Component {
     //get placeholder data and count the words in the body of each element
     //then update the state with an array that has all these counts
     //we will make the bar charts using this array
-    let url3 = "https://jsonplaceholder.typicode.com/posts";
-    d3.json(url3).then(d => {
-      const myArr = d.map(x => x.body.split(" ").length);
-      // this.setState({ dataset: myArr });
-    });
-
     Promise.all([
       fetch('/data/seeds.json').then(response => response.json()),
       fetch('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson')
@@ -54,10 +48,9 @@ class Map extends Component {
     var valueExtent = d3.extent(cities, d => +d.n)
     var size = d3.scaleSqrt()
       .domain(valueExtent)  // What's in the data
-      .range([ 3, 10])  // Size in pixel
+      .range([ 3, 7])  // Size in pixel
 
     const svg = d3
-    //   .select("body")
       .select(".map-wrapper")
       .append("svg")
       .attr("width", this.props.width)
@@ -173,7 +166,15 @@ export default function SystemMap() {
 
   return (
     <>
-      <div id="domain">
+      <div id="domain"
+        style={{
+            backgroundColor: 'lightpink',
+            resize: 'horizontal',
+            overflow: 'hidden',
+            width: '900px',
+            height: 'auto',
+          }}
+        >
         <Map height="600" width="900"/>
       </div>
     </>

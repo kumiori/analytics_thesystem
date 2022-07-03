@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import FullHeader from '../components/fullHeader';
 import ImageIntro from '../components/header10';
 import Content1 from '../components/content1';
 import ImageWithDescription from '../components/image2';
@@ -7,7 +6,8 @@ import RndImageWithFixedDescription from '../components/imageRnd';
 import Map from '../components/video2';
 import Timeline from '../components/timeline';
 import Header1 from '../components/header1';
-import Features from '../components/features11';
+import Content7 from '../components/content7';
+import Countdown2 from '../components/countdown2';
 import cardImages from '../utils/cardsImages';
 import {Helmet} from "react-helmet";
 
@@ -29,7 +29,13 @@ export default function Info() {
             </Helmet> */}
             {/* <FullHeader /> */}
             <Header1 />
+            <Content1 />
             <RndImageWithFixedDescription />
+            <ImageIntro />
+            <Timeline />
+            <ImageWithDescription/>
+            <Content7/>
+            <Countdown2/>
             <Map />
         </>
     );

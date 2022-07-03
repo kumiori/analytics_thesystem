@@ -10,22 +10,20 @@ class ImageWithDescription extends React.Component {
               <div className="image-wrapper">
                 <img src="/images/5.jpg" alt="Mobirise Website Builder" />
                 <p className="sys-description sys-fonts-style mt-2 align-center display-4">
-                  Image Description
+                  SHOW
                 </p>
               </div>
             </div>
             <div className="col-12 col-lg">
               <div className="text-wrapper">
                 <h3 className="sys-section-title sys-fonts-style mb-3 display-5">
-                  <strong>Image with Description</strong>
+                  <strong>Who are WE?</strong>
                 </h3>
                 <p className="sys-text sys-fonts-style display-7">
-                  Use Mobirise website building software to create multiple
-                  sites for commercial and non-profit projects. Click on the
-                  image in this block to replace it. You can add a description
-                  below your image, or on the side. If you want to hide some of
-                  the text fields, open the Block parameters, and uncheck
-                  relevant options.
+                This constitutes the first attempt, to the best of OUR knowledge, to tackle the crude implementation of universal logic mechanisms towards harnessing and visualising (without any further external process) individual's personal data in the public interest in a truly borderless fashion. 
+                </p>
+                <p className="sys-text sys-fonts-style display-7">
+                  What happens in the context of a digital society? Fortunately, political issues of consensus and legitimization as well as power relations, can now be framed into a much wider scope.
                 </p>
               </div>
             </div>

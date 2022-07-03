@@ -1,6 +1,6 @@
 import React from "react";
 
-class countdown2 extends React.Component {
+class Countdown2 extends React.Component {
   render() {
     return (
       <section
@@ -105,4 +105,4 @@ class countdown2 extends React.Component {
   }
 }
 
-export default countdown2;
+export default Countdown2;

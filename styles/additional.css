@@ -1573,3 +1573,25 @@ a {
 .cid-s48P1Icc8J .media-container-row .row-copirayt p {
   width: 100%;
 }
+
+
+
+
+/* My */
+
+.fill {
+  display: flex;
+  justify-content: center;
+}
+.fill img {
+  object-fit: fill;
+  min-width: 100%;
+}
+
+
+marquee {
+  padding: 1em;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+  background: lemonchiffon;
+  background-color: lemonchiffon;
+}

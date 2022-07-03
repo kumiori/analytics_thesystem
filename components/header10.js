@@ -23,11 +23,11 @@ class ImageIntro extends React.Component {
                   </a>
                 </Link>
               </div>
-              <div className="image-wrap mt-4">
+              <div className="image-wrap mt-4 fill">
                 <img
                   src="/images/separation_flip.jpg"
                   alt=""
-                  title
+                  title=""
                 />
               </div>
             </div>

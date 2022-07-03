@@ -34,16 +34,6 @@ function RndImageWithDescription(props) {
     var _rnd_key = Object.keys(CardImages)[_rndIdx];
     var _rnd_src = CardImages[_rnd_key].default.src;
 
-    // console.log('getMethods', getMethods(CardImages));
-    // console.log(CardImages);
-    // console.log('Object.keys length', Object.keys(CardImages).length);
-    // console.log('_rndIdx', _rndIdx);
-    // console.log('keys', Object.keys(CardImages));
-    // console.log('rnd key', Object.keys(CardImages)[_rndIdx]);
-    // console.log('values', Object.values(CardImages));
-    // console.log('rnd img', CardImages[_rnd_key].default.src);
-    // console.log('rnd src', _rnd_src);
-
     return (
         <section className="image2 cid-sZpWNRPN3l" id="image2-s" style={{background: "black"}}>
             <div className="container">
@@ -59,7 +49,7 @@ function RndImageWithDescription(props) {
                     <div className="col-12 col-lg">
                         <div className="text-wrapper">
                             <h3 className="sys-section-title sys-fonts-style mb-3 display-5">
-                                <strong>Cards, that&apos;s it.</strong>
+                                <strong>Questions asked, <em>you ask</em>, that&apos;s it?</strong>
                             </h3>
                             <p className="sys-text sys-fonts-style display-7">
                                 Yet, in the flow, they show <em>structure</em>. 
