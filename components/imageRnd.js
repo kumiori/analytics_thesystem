@@ -174,7 +174,7 @@ function RndImageWithFixedDescription(props) {
                                 </button>
                             </div>
                             <p className="sys-text sys-fonts-style display-7">
-                                Let's <em>play</em>.
+                                Let&lsquo;s <em>play</em>.
                             </p>
                         </div>
                     </div>

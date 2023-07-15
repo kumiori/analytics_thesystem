@@ -21,7 +21,7 @@ class ImageWithDescription extends React.Component {
                   <strong>Who are WE?</strong>
                 </h3>
                 <p className="sys-text sys-fonts-style display-7">
-                This constitutes the first attempt, to the best of OUR knowledge, to tackle the crude implementation of universal logic mechanisms towards harnessing and visualising (without any further external process) individual's personal data in the public interest in a truly borderless fashion. 
+                This constitutes the first attempt, to the best of OUR knowledge, to tackle the crude implementation of universal logic mechanisms towards harnessing and visualising (without any further external process) individual&lsquo;s personal data in the public interest in a truly borderless fashion. 
                 </p>
                 <p className="sys-text sys-fonts-style display-7">
                   What happens in the context of a digital society? Fortunately, political issues of consensus and legitimization as well as power relations, can now be framed into a much wider scope.
