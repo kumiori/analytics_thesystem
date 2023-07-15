@@ -689,9 +689,14 @@ a {
 .cid-s48MCQYojq .sys-section-title {
   text-align: center;
 }
+
+.sys-text {
+  color: #999;
+}
+
 .cid-s48MCQYojq .sys-text,
 .cid-s48MCQYojq .sys-section-btn {
-  color: #555555;
+  color: #999;
   text-align: center;
 }
 @media (max-width: 991px) {
@@ -1347,7 +1352,8 @@ a {
 .cid-sZpWJjVgvL {
   padding-top: 6rem;
   padding-bottom: 6rem;
-  background-image: url("/images/background3.jpg");
+  background-image: url("/images/001-share-2108-189-2.jpg");
+  /* background-image: url("/images/background3.jpg"); */
 }
 .cid-sZpWJjVgvL img,
 .cid-sZpWJjVgvL .item-img {

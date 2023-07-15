@@ -9,7 +9,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   /* color: #232323; */
-  color: #555555;
+  color: #555;
   position: relative;
 }
 
@@ -415,6 +415,11 @@ nav .sys-section-btn {
   top: 6px;
   left: -4px;
   transform: rotate(-90deg);
+}
+
+.dark-background {
+  display: block;
+  background-color: rgba(80, 80, 80, 0.6);
 }
 
 /*! Arrow Down */
