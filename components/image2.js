@@ -121,16 +121,28 @@ export class ImageWithDescriptionHSBC extends React.Component {
 
 
                 <p className="sys-text sys-fonts-style  display-7">
-                    0.1% of HSBC-Assets is approximately $0.3b, around the GDP of Czech Republic, Finland, Portugal, or Romania in the EU area.
-                    HSBC-Assets is approximately $3b, around the GDP of Germany, the highest in the EU area.
+                    HSBC assets amount approximately $3b, <em>which is around</em> the GDP of Germany, <em>which is</em> the highest in the EU area.
                     </p>
 
                 <p className="sys-text sys-fonts-style display-7">
                   However, <em>how</em> these assets are genuinely valuable? 
                   {/* HOW MUCH IS PURE BURDEN? WITH FINANCIAL AND LEGAL CONSEQUENCES? ARE WE SURE THEY KNOW HOW TO COMPUTE DERIVATIVES? */}
                 </p>
+                
+                <p className="sys-text sys-fonts-style  display-7">
+                  This is why we __________ to devote 0.1 % of the company's assets to observe output from climate-positive action.
+                  A small sum in terms of HSBC Assets: if they were one liter of water, 0.1% is approximately  one tenth of a sip, out of the whole liter. 
+                  </p>
                 <p className="sys-text sys-fonts-style display-7">
-                  ...is for all to observe.
+                  <em>Too small?</em> 
+                </p>
+
+                <p className="sys-text sys-fonts-style  display-7">
+                  0.1% of HSBC-Assets is approximately $0.3b, around the GDP of Czech Republic, Finland, Portugal, or Romania in the EU area.
+                  </p>
+
+                <p className="sys-text sys-fonts-style display-7">
+                  Putting things in perspective...the real challenge is <em>transparency</em>
                 </p>
               </div>
             </div>

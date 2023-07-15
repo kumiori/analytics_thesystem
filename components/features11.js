@@ -217,13 +217,19 @@ export class FeaturesHSBC22 extends React.Component  {
                   <h4 className="card-title mbr-fonts-style mb-4 display-2">
                     <strong>Let&lsquo;s make this failure spectacular.</strong>
                   </h4>
+
                   <p className="mbr-text mbr-fonts-style mb-4 display-7">
-                    We invite HSBC to <em>show</em> what <em>they say</em>.  
+                    Reflecting on the moral failure of the global financial system, 
+                    we explore the gap that bears
+                    consequences and liabilities on the erosion of the social fabric... 
+                  </p>
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    We invite HSBC to <em>show</em> what <em>they play</em>.  
                   </p>
 
 
                     <p className="mbr-text mbr-fonts-style mb-4 display-7">
-                    Would you like to see clearly engaged for global environmentally-positive plans, 
+                    <strong>Question:</strong> Would you like to see clearly engaged for global environmentally-positive plans, 
                     0.1% of HSBC-Assets, as a challenge for commitment, with <em>proof of work</em>?
                     </p>
 
@@ -233,14 +239,9 @@ export class FeaturesHSBC22 extends React.Component  {
                     </p>
 
                     <p className="mbr-text mbr-fonts-style mb-4 display-7">
-                    Them is HSBC. This is Us. Would you like to play?
+                    Them is HSBC. We show how we play. This is Us. Would you like to play?
                     </p>
 
-                    <p className="mbr-text mbr-fonts-style mb-4 display-7">
-                    Speaking of the moral failure of the global financial system, 
-                    we explore the gap that bears
-                    consequences and liabilities on the erosion of the social fabric. 
-                  </p>
                   <p className="mbr-text mbr-fonts-style mb-4 display-7">
                     As social capital is compromised when social bond weakens,
                     the question of trust ___________ is ________ hugely important when facing _________.
