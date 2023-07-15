@@ -17,10 +17,10 @@ import {FeaturesMorvan3 as Steps} from '../components/features19';
 import cardImages from '../utils/cardsImages';
 import {Helmet} from "react-helmet";
 
-const MathJax = require('react-mathjax')
-const tex = `f(x) \\forall = \\int_{-\\infty}^\\infty
-    \\hat f(\\xi)\\,e^{2 \\pi i \\xi x}
-    \\,d\\xi`
+// const MathJax = require('react-mathjax')
+// const tex = `f(x) \\forall = \\int_{-\\infty}^\\infty
+//     \\hat f(\\xi)\\,e^{2 \\pi i \\xi x}
+//     \\,d\\xi`
 
 
 export default function Info() {
@@ -43,6 +43,7 @@ export default function Info() {
             <Gallery />
             {/* <GalleryM /> */}
             {/* <Timeline /> */}
+            
             <Timeline />
             <Features6 />
             {/* <RndImageWithFixedDescription /> */}
