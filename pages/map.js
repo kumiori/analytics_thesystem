@@ -28,7 +28,6 @@ export default function Map() {
                     console.log('width', width)
                     console.log('height', height)
                     
-
                     var projection = d3.geoMercator()
                         .center([0, 20])                // GPS of location to zoom on
                         .scale(99)                       // This is like the zoom
