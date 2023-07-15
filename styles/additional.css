@@ -778,6 +778,12 @@ a {
   object-fit: cover;
   filter: blur(5rem);
 }
+
+.image-wrap.vignette img {
+  box-shadow: 'inset 0 0 300px #000' !important
+}
+
+
 .cid-sZpWdFSJ67 .sys-section-title,
 .cid-sZpWdFSJ67 .sys-section-subtitle,
 .cid-sZpWdFSJ67 .timeline-date {
@@ -1355,6 +1361,12 @@ a {
   background-image: url("/images/001-share-2108-189-2.jpg");
   /* background-image: url("/images/background3.jpg"); */
 }
+
+.cid-sZpWJjVgvL.climate {
+  background-image: url("/images/climate/007-share-0417-107.jpg");
+  /* background-image: url("/images/background3.jpg"); */
+}
+
 .cid-sZpWJjVgvL img,
 .cid-sZpWJjVgvL .item-img {
   width: 100%;

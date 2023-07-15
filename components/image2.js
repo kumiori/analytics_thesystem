@@ -130,8 +130,8 @@ export class ImageWithDescriptionHSBC extends React.Component {
                 </p>
                 
                 <p className="sys-text sys-fonts-style  display-7">
-                  This is why we __________ to devote 0.1 % of the company's assets to observe output from climate-positive action.
-                  A small sum in terms of HSBC Assets: if they were one liter of water, 0.1% is approximately  one tenth of a sip, out of the whole liter. 
+                  This is why we __________ to devote 0.1 % of the company&lsquo;s assets to observe output from climate-positive action.
+                  A small sum in terms of HSBC Assets: if they were one liter of water, 0.1% is approximately one tenth of a sip*, out of the whole liter. 
                   </p>
                 <p className="sys-text sys-fonts-style display-7">
                   <em>Too small?</em> 
@@ -144,6 +144,9 @@ export class ImageWithDescriptionHSBC extends React.Component {
                 <p className="sys-text sys-fonts-style display-7">
                   Putting things in perspective...the real challenge is <em>transparency</em>
                 </p>
+                <ol>
+                  <li>https://www.fluther.com/26022/how-much-volume-ml-is-in-a-sip/</li>
+                </ol>
               </div>
             </div>
           </div>
