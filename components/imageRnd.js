@@ -170,7 +170,6 @@ function RndImageWithFixedDescription(props) {
                                 } 
                                 } className="btn btn-primary display-4">
                                 Roll your dice. We ask.
-                                {/* 0#####----------------> */}
                                 </button>
                             </div>
                             <p className="sys-text sys-fonts-style display-7">
