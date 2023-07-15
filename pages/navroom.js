@@ -43,7 +43,7 @@ export default function Info() {
             <Gallery />
             {/* <GalleryM /> */}
             {/* <Timeline /> */}
-            
+
             <Timeline />
             <Features6 />
             {/* <RndImageWithFixedDescription /> */}

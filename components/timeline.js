@@ -490,5 +490,129 @@ export class TimelineMorvan extends React.Component {
   }
 }
 
+export class TimelineHSBC extends React.Component {
+  render() {
+    return (
+      <section className="timeline3 cid-sZpWdFSJ67" id="timeline3-k">
+        <div className="container">
+          <div className="sys-section-head">
+            <h3 className="sys-section-title sys-fonts-style align-center mb-0 display-2">
+              <strong>A Conversation for All</strong>
+            </h3>
+          </div>
+          <div className="timelines-container mt-4">
+            <div className="row timeline-element first-separline mb-5">
+              <div className="timeline-date col-12">
+                <div className="timeline-date-wrapper">
+                  <p className="sys-timeline-date display-7">starting from a <em>burning</em> doubt: is it really?</p>
+                </div>
+              </div>
+              <span className="iconBackground" />
+              <div className="col-12 col-md-6">
+                <div className="image-wrapper">
+                  <img
+                    src="/images/001-share-0422-234.jpg"
+                    alt="The System"
+                    title
+                  />
+                </div>
+              </div>
+              <div className="col-12 col-md-6">
+                <div className="timeline-text-wrapper">
+                  <h4 className="sys-timeline-title sys-fonts-style mb-0 display-5">
+                    <strong>Opening</strong>
+                  </h4>
+                  <p className="sys-text sys-fonts-style mt-3 mb-0 display-7">
+                    For creative spirits onto the wild
+                  {/* /3 principles. */}
+                  </p>
+                </div>
+              </div>
+              <div className="col-12 col-md-6">
+                <div className="timeline-text-wrapper">
+                  <h4 className="sys-timeline-title sys-fonts-style mb-0 display-5">
+                    <strong>Contributing</strong>
+                  </h4>
+                  <p className="sys-text sys-fonts-style mt-3 mb-0 display-7">
+                    From grounds up, a heavenly rain
+                  </p>
+                </div>
+              </div>
+
+
+              <span className="iconBackground" />
+              <div className="col-12 col-md-6">
+                <div className="image-wrapper">
+                  <img
+                    src="/images/003-share-1413-286.jpg"
+                    alt="The System"
+                    title
+                  />
+                </div>
+              </div>
+
+            </div>
+            <div className="row timeline-element first-separline mb-5">
+              <div className="timeline-date col-12">
+                <div className="timeline-date-wrapper">
+                  <p className="sys-timeline-date display-7">Connecting</p>
+                </div>
+              </div>
+
+
+              <span className="iconBackground" />
+              <div className="col-12 col-md-6">
+                <div className="image-wrapper">
+                  <img
+                    src="/images/002-share-3410-283.jpg"
+                    alt="The System"
+                    title
+                  />
+                </div>
+              </div>
+
+
+              <div className="col-12 col-md-6">
+                <div className="timeline-text-wrapper">
+                  <h4 className="sys-timeline-title sys-fonts-style mb-0 display-5">
+                    <strong>Understanding</strong>
+                  </h4>
+                  <p className="sys-text sys-fonts-style mt-3 mb-0 display-7">
+                    Just for reference
+                  </p>
+                </div>
+              </div>
+
+              <div className="col-12 col-md-6">
+                <div className="timeline-text-wrapper">
+                  <h4 className="sys-timeline-title sys-fonts-style mb-0 display-5">
+                    <strong>Action</strong>
+                  </h4>
+                  <p className="sys-text sys-fonts-style mt-3 mb-0 display-7">
+                    all fertile grounds
+                  </p>
+                </div>
+              </div>
+
+
+              <span className="iconBackground" />
+              <div className="col-12 col-md-6">
+                <div className="image-wrapper">
+                  <img
+                    src="/images/001-share-1809-282.jpg"
+                    alt="The System"
+                    title
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
+
 
 export default TimelineIce;
