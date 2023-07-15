@@ -221,7 +221,7 @@ export class HeaderHSBC extends React.Component {
                 <strong>Seeds need time in the <em>dark</em> Earth.</strong>
               </h2>
               <p className="sys-text sys-fonts-style display-7">
-              Where is the point of no return? It's <em>when</em> small things matter the most.
+              Where is the point of no return? It&lsquo;s <em>when</em> small things matter the most.
               </p>
 
               <p className="sys-text sys-fonts-style display-7">
@@ -232,7 +232,7 @@ export class HeaderHSBC extends React.Component {
 
               <p className="sys-text sys-fonts-style display-7">
                 <strong>Abstract:</strong> We Fuck* HSBC (and the banking system as a consequence).
-                "Everyone has to play its role":
+                &quot;Everyone has to play its role&quot;:
                 We challenge HSBC to engage 0.1% of its assets on the shelf for <em>climate-positive action</em>. 
                 Half and half, we split. 
                 Our recovery plan: to compare the output.

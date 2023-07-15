@@ -127,7 +127,7 @@ export class FeaturesHSBC2 extends React.Component  {
               <div className="card-wrapper">
                 <div className="card-box">
                   <h4 className="card-title mbr-fonts-style mb-4 display-2">
-                    <strong>Let's make this failure spectacular.</strong>
+                    <strong>Let&lsquo;s make this failure spectacular.</strong>
                   </h4>
                   <p className="mbr-text mbr-fonts-style mb-4 display-7">
                     We invite HSBC to <em>show</em> what <em>they say</em>.  
@@ -150,12 +150,12 @@ export class FeaturesHSBC2 extends React.Component  {
                   <p className="mbr-text mbr-fonts-style mb-4 display-7">
                       HSBC has been playing this role for many years,
                       notably by applying strict control on certain high-risk sectors.
-                      {/* IF WE PLAY, WHAT'S HIGHEST RISK THAN YOU CAN BEAR
-                      IF WE PLAY, WHAT'S EXPOSED RISK
+                      {/* IF WE PLAY, WHAT&lsquo;S HIGHEST RISK THAN YOU CAN BEAR
+                      IF WE PLAY, WHAT&lsquo;S EXPOSED RISK
                       IF WE PLAY, WHERE IS RISK COMING FROM
                       ISN'T THE BANKING SYSTEM AT RISK
                       SYSTEMIC
-                      IF WE PLAY, WHAT'S RISK? */}
+                      IF WE PLAY, WHAT&lsquo;S RISK? */}
                     </p>
                     <p className="mbr-text mbr-fonts-style mb-4 display-7">
                       <em>If we play, HSBC, what is</em> your <em>risk?</em>  
@@ -215,7 +215,7 @@ export class FeaturesHSBC22 extends React.Component  {
               <div className="card-wrapper">
                 <div className="card-box">
                   <h4 className="card-title mbr-fonts-style mb-4 display-2">
-                    <strong>Let's make this failure spectacular.</strong>
+                    <strong>Let&lsquo;s make this failure spectacular.</strong>
                   </h4>
                   <p className="mbr-text mbr-fonts-style mb-4 display-7">
                     We invite HSBC to <em>show</em> what <em>they say</em>.  
@@ -228,7 +228,7 @@ export class FeaturesHSBC22 extends React.Component  {
                     </p>
 
                     <p className="mbr-text mbr-fonts-style mb-4 display-7">
-                    It's US vs. Them.
+                    It&lsquo;s US vs. Them.
                     This is a doubt-based challenge
                     </p>
 
