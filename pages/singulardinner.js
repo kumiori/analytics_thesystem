@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import FullHeader from '../components/fullHeader';
-import { HeaderHSBC as Header } from '../components/header1';
 import { ImageIntroHSBC as ImageIntro } from '../components/header10';
 import {ContentHSBC as Content} from '../components/content1';
-import {FeaturesHSBC2 as Features}  from '../components/features11';
 import { ImageWithDescriptionHSBC as ImageWithDescription } from '../components/image2';
-import {FeaturesHSBC22 as Features2}  from '../components/features11';
-import {FeaturesHSBC3 as Steps} from '../components/features19';
 import { GalleryHSBC as Gallery } from '../components/gallery2';
 import {TimelineHSBC as Timeline} from '../components/timeline';
+import { HeaderHSBC as Header } from '../components/header1';
+import {FeaturesHSBC2 as Features}  from '../components/features11';
+import {FeaturesHSBC22 as Features2}  from '../components/features11';
 import {FeaturesMorvan as Features6} from '../components/features6';
+import {FeaturesHSBC3 as Steps} from '../components/features19';
 
 import { GalleryMorvan as GalleryM } from '../components/gallery4';
 import RndImageWithDescription from '../components/image10';
