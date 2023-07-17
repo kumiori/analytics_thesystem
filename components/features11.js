@@ -112,11 +112,6 @@ export class FeaturesMorvan2 extends React.Component  {
 }
 
 
-
-
-
-
-
 export class FeaturesHSBC2 extends React.Component  {
   render () {
     return (
@@ -263,5 +258,131 @@ export class FeaturesHSBC22 extends React.Component  {
     );
   }
 }
+export class FeaturesDinner2 extends React.Component  {
+  render () {
+    return (
+      <section className="features11 cid-sZpWUMpjUs" id="features12-u">
+        <div className="container">
+          <div className="m-0 row align-items-center">
+          <div className="p-0 col-12 col-lg-6 md-pb">
+              <div className="image-wrapper">
+                <Image src={"/images/001-share-2208-189.jpg"} 
+                width={600} 
+                height={600} 
+                alt=""
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }} />
+              </div>
+            </div>
+            <div className="col-12 col-lg">
+              <div className="card-wrapper">
+                <div className="card-box">
+                  <h4 className="card-title mbr-fonts-style mb-4 display-2">
+                    <strong>Let&lsquo;s _____ __ _____ ___________.</strong>
+                  </h4>
 
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    We invite _______ to <em>______</em> what <em>____________</em>.  
+                  </p>
+
+
+                    <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    <strong>Question:</strong> Would you like to ________ ____________ ______________
+                    ________ ________ <em>proof of __________</em>?
+                    </p>
+
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    As social capital is compromised when social bond weakens,
+                    the question of trust ___________ is ________ hugely important when facing _________.
+                    Social tranformations, inequalities, natural phenomena, 
+                    and financial practices, incentives as well as interests, 
+                    all play a role in shaping our understanding of <em>trust</em>. 
+                    </p>
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    All are questions that lay at the heart of our work, like <em>_______</em>.
+                    </p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
+
+export class FeaturesDinner22 extends React.Component  {
+  render () {
+    return (
+      <section className="features11 cid-sZpWUMpjUs" id="features12-u">
+        <div className="container">
+          <div className="m-0 row align-items-center">
+          <div className="p-0 col-12 col-lg-6 md-pb">
+              <div className="image-wrapper">
+                <Image src={"/images/001-share-2208-189.jpg"} 
+                width={600} 
+                height={600} 
+                alt=""
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                }} />
+              </div>
+            </div>
+            <div className="col-12 col-lg">
+              <div className="card-wrapper">
+                <div className="card-box">
+                  <h4 className="card-title mbr-fonts-style mb-4 display-2">
+                    <strong>Let&lsquo;s start cooking.</strong>
+                  </h4>
+
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    Reflecting on the moral failure of the global financial system, 
+                    we explore the gap that bears
+                    consequences and liabilities on the erosion of the social fabric... 
+                  </p>
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    We invite HSBC to <em>show</em> what <em>they play</em>.  
+                  </p>
+
+
+                    <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    <strong>Question:</strong> Would you like to see clearly engaged for global environmentally-positive plans, 
+                    0.1% of HSBC-Assets, as a challenge for commitment, with <em>proof of work</em>?
+                    </p>
+
+                    <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    It&lsquo;s US vs. Them.
+                    This is a doubt-based challenge
+                    </p>
+
+                    <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    Them is HSBC. We show how we play. This is Us. Would you like to play?
+                    </p>
+
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    As social capital is compromised when social bond weakens,
+                    the question of trust ___________ is ________ hugely important when facing _________.
+                    Social tranformations, inequalities, natural phenomena, 
+                    and financial practices, incentives as well as interests, 
+                    all play a role in shaping our understanding of <em>trust</em>. 
+                    </p>
+                  <p className="mbr-text mbr-fonts-style mb-4 display-7">
+                    All are questions that lay at the heart of our work, like <em>Nature</em>.
+                    </p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
 export default Features;

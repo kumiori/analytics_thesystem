@@ -9,10 +9,10 @@ class Map extends React.Component {
         <div className="container">
           <div className="sys-section-head">
             <h4 className="sys-section-title sys-fonts-style mb-0 display-2">
-              <strong>Conscious thought, in Action</strong>
+              <strong>in Action</strong>
             </h4>
             <h5 className="sys-section-subtitle sys-fonts-style mb-0 mt-2 display-7">
-              Nucleation from points at the boundaries. Circles correspond to hotspots.
+              Nucleation from boundaries. Circles correspond to hotspots.
             </h5>
           </div>
           <div className="row justify-content-center mt-4">
@@ -24,7 +24,7 @@ class Map extends React.Component {
                 Players of the World: War-mAP.
               </p>
               <p className="sys-text pt-2 sys-fonts-style display-4">(warmup)</p>
-              <SeedsList />
+          <SeedsList />
             </div>
           </div>
         </div>

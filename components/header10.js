@@ -115,5 +115,44 @@ export class ImageIntroHSBC extends React.Component {
   );
 }
 }
+export class ImageIntroDinner extends React.Component {
+  render () {
+    return (
+    <section className="header10 cid-sZpX2NugG2" id="header10-v">
+      <div className="align-center container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-md-12 col-lg-9">
+            <h1 className="mbr-section-title mbr-fonts-style mb-3 display-1">
+              <strong>(*)</strong>
+            </h1>
+            <p className="mbr-text mbr-fonts-style display-7">
+              ______________ <em>optimal</em> ______________
+            </p>
+            <div className="mbr-section-btn mt-3">
+              <Link href="/">
+                <a
+                  className="btn btn-secondary display-4"
+                >
+                  Wish an invitation
+                </a>
+              </Link>
+            </div>
+            <div className="image-wrap vignette mt-4">
+              <img
+              // 
+                // src="/images/climate/005-share-5601-091.jpg"
+                // src="/images/climate/004-share-3014-287.jpg"
+                src="/images/climate/001-share-2108-189.jpg"
+                alt=""
+                title
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+}
 
 export default ImageIntro;

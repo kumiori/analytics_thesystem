@@ -275,5 +275,77 @@ export class HeaderHSBC extends React.Component {
   }
 }
 
+export class HeaderDinner extends React.Component {
+  render() {
+    return (
+      <section
+        className="header2 cid-s48MCQYojq sys-fullscreen sys-parallax-background"
+        id="header2-f"
+      >
+        <div
+          className="sys-overlay"
+          style={{
+            opacity: "0.0",
+            backgroundColor: "rgb(255, 255, 255)"
+          }}
+        />  
+        <div className="align-center container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-8">
+              <h1 className="sys-section-title sys-fonts-style mb-3 display-1">
+                <strong>&quot;We are a world in pieces,</strong>
+              </h1>
+              <h2 className="sys-section-title sys-fonts-style mb-3">
+                <strong>We need to be a world <em>at</em> peace.&quot;</strong>
+              </h2>
+              <p className="sys-text sys-fonts-style display-7">
+              _______ ________, __ of __  
+              {/* It&lsquo;s <em>when</em> small things matter the most. */}
+              </p>
+
+              <p className="sys-text sys-fonts-style display-7">
+              {/* The question is: ____________ how patient are you?. */}
+              {/* The question is: ____________ how much sense do they make?. */}
+                {/* We know how to gracefully crash (the system). */}
+              </p>
+
+              <p className="sys-text sys-fonts-style display-7">
+                <strong>Abstract:</strong> 
+              </p>
+                
+              <p className="sys-text sys-fonts-style display-7">
+                Indeed, by stability, __________________
+              </p>
+
+              <p className="sys-text sys-fonts-style display-7">
+                What drives Us?
+              </p>
+
+              <div className="sys-section-btn mt-3">
+              <Link href="/">
+                <a
+                  className="btn btn-success display-4"
+                >
+                  Back to business &lt; &lt; 
+                </a>
+                </Link>
+                {" "}
+                <Link href="#features12-u">
+                <a
+                  className="btn btn-success-outline display-4"
+                >
+                  Dig deeper ___ V
+                </a>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
+
 export default Header2;
 
